@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Quieres ser mi San Valentín?</title>
+
+<style>
+body {
+    background: linear-gradient(to bottom, #ffd6e8, #ffc0cb);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #d63384;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 34px;
+    margin-top: 50px;
+}
+
+img {
+    width: 250px;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.botones {
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#si {
+    background-color: #ff4d88;
+    color: white;
+}
+
+#no {
+    background-color: #999;
+    color: white;
+    position: relative;
+}
+
+#mensaje {
+    display: none;
+    font-size: 24px;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>¿Quieres ser mi San Valentín? ❤️</h1>
+
+<img src="stitch.png" alt="Stitch enamorado">
+
+<div class="botones">
+    <button id="si" onclick="aceptar()">Sí ❤️</button>
+    <button id="no" onmouseover="mover()">No 😢</button>
+</div>
+
+<p id="mensaje">¡Yay! Sabía que dirías que sí. ❤️🎉</p>
+
+<script>
+function aceptar() {
+    document.getElementById("mensaje").style.display = "block";
+}
+
+function mover() {
+    const boton = document.getElementById("no");
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    boton.style.transform = `translate(${x}px, ${y}px)`;
+}
+</script>
+
+</body>
+</html>
