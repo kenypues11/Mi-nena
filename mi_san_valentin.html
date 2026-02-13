@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Quieres ser mi San Valentín?</title>
+
+<style>
+body {
+    background: linear-gradient(to bottom, #ffd6e8, #ffc0cb);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #d63384;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 50px;
+}
+
+img {
+    width: 250px;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+p {
+    font-size: 24px;
+}
+
+.corazon {
+    position: fixed;
+    color: red;
+    animation: flotar 5s linear infinite;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>¿Quieres ser mi San Valentín? ❤️</h1>
+
+<img src="stitch.png" alt="Stitch enamorado">
+
+<p>¡Yay! Sabía que dirías que sí. ❤️🎉</p>
+
+<script>
+function crearCorazon() {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "❤️";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize = Math.random() * 20 + 15 + "px";
+    corazon.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 5000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
